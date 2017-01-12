@@ -1,0 +1,14 @@
+@import "compass";
+@import "theme_variables";
+#languages-block-top{
+	min-width: 170px;
+	#first-languages{
+		.selected{
+			color: $theme-color-default;
+		}
+		img{
+			@include rtl-float-right;
+			margin-top: 5px;			
+		}		
+	}
+}

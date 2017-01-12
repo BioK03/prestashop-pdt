@@ -1,0 +1,83 @@
+@import "compass";
+@import "theme_variables";
+
+ 
+.ac_results {
+	background: $light-background;
+	border: 1px solid $base-border-color;
+	width: 271px;
+	margin-top: -1px;
+	li {
+		padding: 0 10px;
+		font-weight: normal;
+		color: #686666;
+		font-size: 13px;
+		line-height: 22px;
+		&.ac_odd {
+			background: $light-background;
+		}
+		&:hover, &.ac_over {
+			background: $base-box-bg;	
+		}
+	}
+}	
+
+
+
+
+form#searchbox {
+	margin: 0 auto;
+    position: absolute;  
+	label {
+		color: $base-text-color;
+	}
+	input#search_query_block {
+		margin-right:10px;
+		max-width:222px;
+		margin-bottom:10px;
+		display:inline-block;
+		float:left;
+	}
+	.button.button-small {
+		float:left;
+		i {
+			margin-right:0;
+		}
+	}
+}
+#search_block_top{
+	overflow: hidden;
+	width: 21%;
+}
+.search-top{
+	position: relative;
+	margin: 7px 0px;
+	@include rtl-left(-36px);	
+	button{
+		background: url(.../../img/bg-search.png) no-repeat;
+		padding: 17px 28px;
+		border: none;
+		&:hover{
+			background: url(.../../img/bg-search.png) no-repeat;						
+			.rtl &{
+				background: url(img/bg-search-rtl.png) no-repeat;
+			}
+		}
+		.rtl &{
+			background: url(img/bg-search-rtl.png) no-repeat;
+		}
+		span{
+			display: none;
+		}
+	}
+	input{
+		height: 33px;
+		width: 222px !important;
+		outline: none;
+		border: none;
+		padding-left: 10px;
+		&:hover, &:active, &:focus{
+			border: none;			
+		}
+	}
+}

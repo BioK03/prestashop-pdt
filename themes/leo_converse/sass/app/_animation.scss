@@ -1,0 +1,141 @@
+.product-block {
+	.quick-view{
+        @include opacity(0);
+        visibility: hidden;   
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -14px;
+        margin-top: -14px;
+        @include transition (all 0.4s ease 0s);
+        z-index: 9;
+    }
+    .cart{
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        bottom: -40px;                
+        @include transition(all 0.5s ease 0s);        
+        a{
+            font-size: $font-size-base;
+            text-transform: uppercase;
+
+        }
+        &:hover{
+            a{
+                background: $theme-color-secondary;
+                border: 1px solid $theme-color-secondary;
+            }
+        }
+    }    
+    .functional-buttons{
+        display: $product-button-display;
+        margin-bottom: $product-info-margin;
+        width: 100%;
+        position: absolute;
+        left: -800px;
+        top: -38px;
+        @include transition(all ease 0.5s);   
+        .wishlist{
+            .btn{                
+                border-left: 1px solid darken($button-addtocart-bg-hover,5%);
+                border-right: 1px solid darken($button-addtocart-bg-hover,5%);
+                @include box-sizing(border-box);
+            }
+        }        
+        > div{
+            width: 20%;
+            @include rtl-float-left();
+            @include transition(all ease 0.5s);  
+            span{display: none;}
+            &:first-child{
+                width: 80%;
+                span{display: inline-block;}
+            }
+
+            &:hover{
+                width: 80%!important;
+                @include transition(all ease 0.5s);  
+                span{display: inline-block!important;}
+            }
+            .btn{width: 100%;}
+        }
+        &:hover{
+            > div{
+                &:first-child{
+                    width: 20%;
+                    .btn{ 
+                        background: $theme-color-default;
+                        border: 1px solid $theme-color-secondary;
+                        &:hover{
+                            background: $theme-color-secondary;
+                        } 
+                    }
+                    span{display: none;}
+                }
+            }
+        }
+    }
+    &:hover{        
+        .quick-view{
+            @include opacity(1);
+            visibility: visible;  
+            @include transition (all 0.4s ease 0s);
+        }
+        .functional-buttons{
+            @include transition(all ease 0.5s);
+            left: 0;           
+        }
+        .cart{
+            bottom: 0;
+            @include transition(all 0.5s ease 0s);
+        }
+        .price{
+            bottom: 40px;
+            @include transition(all 0.5s ease 0s);
+            .sidebar &{
+                bottom: 0px;
+            }
+            
+        }
+    }
+}
+
+.effect {    
+    a{
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        &:before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            @include transition (all 0.3s ease-out 0s);
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            @include transition (all 0.3s ease-out 0s);
+        }
+        &:hover:before,
+        &:hover:after{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+

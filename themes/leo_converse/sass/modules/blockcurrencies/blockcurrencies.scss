@@ -1,0 +1,12 @@
+@import "compass";
+@import "theme_variables";
+#first-currencies{
+	.selected{
+		a{
+			color: $theme-color-default;
+		}
+	}
+	span{
+		@include rtl-float-right;
+	}
+}
